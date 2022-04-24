@@ -1,0 +1,4 @@
+site_name: Summit Documentation
+theme: readthedocs
+repo_url: https://github.com/steviecoaster/SummitDocs
+docs_dir: ./docs/
