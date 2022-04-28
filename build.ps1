@@ -51,7 +51,7 @@ process {
         }
         $GenerateDocs {
             refreshenv
-            $mkdocs = $mkdocs = Get-ChildItem -Path (Join-Path C:\ -ChildPath 'Python*\Scripts') -Recurse | 
+            $mkdocs = $mkdocs = Get-ChildItem -Path "$env:SystemDrive\Python*\Scripts\" -Recurse | 
                         Where-Object Name -match 'mkdocs.exe'
 
             if((Test-Path $mkdocs)){
