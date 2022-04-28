@@ -52,8 +52,14 @@ process {
         $GenerateDocs {
             refreshenv
             $mkdocs = 'C:\Python310\Scripts\mkdocs.exe'
-            $mkDocsArgs = @('build')
-            & $mkdocs @mkDocsArgs
+
+            if((Test-Path $mkdocs)){
+                $mkDocsArgs = @('build')
+                & $mkdocs @mkDocsArgs    
+            } 
+            else {
+                throw "mkdocs not found for raisins"
+            }
         }
 
         $PublishDocs {
