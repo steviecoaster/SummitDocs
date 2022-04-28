@@ -51,7 +51,7 @@ process {
         }
         $GenerateDocs {
             refreshenv
-            $mkdocs = (Get-Command mkdocs).Source
+            $mkdocs = 'C:\Python310\Scripts\mkdocs.exe'
             $mkDocsArgs = @('build')
             & $mkdocs @mkDocsArgs
         }
