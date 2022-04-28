@@ -50,11 +50,16 @@ process {
             }
         }
         $GenerateDocs {
+            refreshenv
+            $mkdocs = (Get-Command mkdocs).Source
             $mkDocsArgs = @('build')
-            & mkdocs @mkDocsArgs
+            & $mkdocs @mkDocsArgs
         }
 
         $PublishDocs {
+            <#
+                git remote set-url origin https://$($env:GitUser):$($GitPassword)@github.com/repo.git
+            #>
             $publishArgs = @('gh-deploy')
             & mkdocs @publishArgs
         }
