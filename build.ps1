@@ -50,12 +50,13 @@ process {
             }
         }
         $GenerateDocs {
-            $mkdocs = $mkdocs = Get-ChildItem -Path "C:\hostedtoolcache\windows\Python\3.10.4\x64\Scripts" -Recurse | 
-                        Where-Object Name -match 'mkdocs.exe'
+            $mkdocs = Get-ChildItem -Path "C:\hostedtoolcache\windows\Python\3.10.4\x64\Scripts\" -Recurse |
+                        Where-Object Name -match 'mkdocs.exe' |
+                        Select-Object -ExpandProperty Fullname
 
             if((Test-Path $mkdocs)){
                 $mkDocsArgs = @('build')
-                & $mkdocs.FullName @mkDocsArgs    
+                & $($mkdocs.FullName) @mkDocsArgs    
             } 
             else {
                 throw "mkdocs not found for raisins"
