@@ -50,8 +50,7 @@ process {
             }
         }
         $GenerateDocs {
-            refreshenv
-            $mkdocs = $mkdocs = Get-ChildItem -Path "$env:SystemDrive\Python*\Scripts\" -Recurse | 
+            $mkdocs = $mkdocs = Get-ChildItem -Path "$env:SystemDrive\" -Recurse -Directory -Depth 1 | 
                         Where-Object Name -match 'mkdocs.exe'
 
             if((Test-Path $mkdocs)){
