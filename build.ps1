@@ -51,7 +51,7 @@ process {
         }
         $GenerateDocs {
             refreshenv
-            $mkdocs = 'C:\Python39\Scripts\mkdocs.exe'
+            $mkdocs = Get-ChildItem 'C:\Python310\' -Recurse | Where Name -match 'mkdocs.exe' |Select -Expand Fullname
 
             if((Test-Path $mkdocs)){
                 $mkDocsArgs = @('build')
