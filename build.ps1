@@ -51,11 +51,12 @@ process {
         }
         $GenerateDocs {
             refreshenv
-            $mkdocs = Get-ChildItem 'C:\Python310\' -Recurse | Where Name -match 'mkdocs.exe' |Select -Expand Fullname
+            $mkdocs = $mkdocs = Get-ChildItem -Path (Join-Path C:\ -ChildPath 'Python*\Scripts') -Recurse | 
+                        Where-Object Name -match 'mkdocs.exe'
 
             if((Test-Path $mkdocs)){
                 $mkDocsArgs = @('build')
-                & $mkdocs @mkDocsArgs    
+                & $mkdocs.FullName @mkDocsArgs    
             } 
             else {
                 throw "mkdocs not found for raisins"
