@@ -56,7 +56,7 @@ process {
 
             if((Test-Path $mkdocs)){
                 $mkDocsArgs = @('build')
-                & $($mkdocs.FullName) @mkDocsArgs    
+                & $mkdocs @mkDocsArgs    
             } 
             else {
                 throw "mkdocs not found for raisins"
