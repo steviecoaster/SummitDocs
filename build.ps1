@@ -50,7 +50,7 @@ process {
             }
         }
         $GenerateDocs {
-            $mkdocs = $mkdocs = Get-ChildItem -Path "$env:SystemDrive\" -Recurse -Directory -Depth 1 | 
+            $mkdocs = $mkdocs = Get-ChildItem -Path "C:\hostedtoolcache\windows\Python\3.10.4\x64\Scripts" -Recurse | 
                         Where-Object Name -match 'mkdocs.exe'
 
             if((Test-Path $mkdocs)){
