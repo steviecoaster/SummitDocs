@@ -67,8 +67,21 @@ process {
             <#
                 git remote set-url origin https://$($env:GitUser):$($GitPassword)@github.com/repo.git
             #>
-            $publishArgs = @('gh-deploy')
-            & mkdocs @publishArgs
+
+            $mkdocs = Get-ChildItem -Path "C:\hostedtoolcache\windows\Python\3.10.4\x64\Scripts\" -Recurse |
+            Where-Object Name -match 'mkdocs.exe' |
+            Select-Object -ExpandProperty Fullname
+
+            if((Test-Path $mkdocs)){
+                
+                $publishArgs = @('gh-deploy')
+                & $mkdocs @publishArgs
+    
+            } 
+            else {
+                throw "mkdocs not found for raisins"
+            }
+
         }
     }
 }
