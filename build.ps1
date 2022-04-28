@@ -51,7 +51,7 @@ process {
         }
         $GenerateDocs {
             refreshenv
-            $mkdocs = 'C:\Python310\Scripts\mkdocs.exe'
+            $mkdocs = 'C:\Python39\Scripts\mkdocs.exe'
 
             if((Test-Path $mkdocs)){
                 $mkDocsArgs = @('build')
