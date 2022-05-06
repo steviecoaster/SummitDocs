@@ -65,7 +65,7 @@ process {
 
         $PublishDocs {
            
-            $gitArgs = @('remote','set-url','origin',"https://$($env:GitUser):$($env:GitPassword)@github.com/repo.git")
+            $gitArgs = @('remote','set-url','origin',"https://$($env:GitUser):$($env:GitPassword)@github.com/steviecoaster/SummitDocs.git")
             & git @gitArgs
            
 
