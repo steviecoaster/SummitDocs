@@ -2,11 +2,19 @@ function Get-DadJoke {
     <#
     .SYNOPSIS
     This is as terrible as it sounds
+
+    .DESCRIPTION
+    Tells you a dad joke. It's really creepy.
         
+    .EXAMPLE
+    Get-DadJoke
+
+    It's super simple
+    
     .NOTES
     I blame @juddmissile for this
     #>
-    [cmdletBinding()]
+    [cmdletBinding(HelpUri = 'https://steviecoaster.dev/SummitDocs/Get-DadJoke/')]
     Param()
 
     process {

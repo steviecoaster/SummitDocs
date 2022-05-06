@@ -27,7 +27,7 @@ function Get-PackageIcon {
     .NOTES
     
     #>
-    [cmdletBinding()]
+    [cmdletBinding(HelpUri = 'https://steviecoaster.dev/SummitDocs/Get-PackageIcon/')]
     param(
         [Parameter(Mandatory)]
         [String[]]

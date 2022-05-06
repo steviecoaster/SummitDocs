@@ -13,7 +13,7 @@ Function Open-GitRepo {
     Open-GitRepo -Repo SuperAwesomeProject
     #>
     [Alias("Goto")]
-    [cmdletBinding()]
+    [cmdletBinding(HelpUri = 'https://steviecoaster.dev/SummitDocs/Open-GitRepo/')]
     Param(
         [Parameter(Mandatory)]
         [ArgumentCompleter(

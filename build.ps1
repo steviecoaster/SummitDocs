@@ -64,9 +64,10 @@ process {
         }
 
         $PublishDocs {
-            <#
-                git remote set-url origin https://$($env:GitUser):$($GitPassword)@github.com/repo.git
-            #>
+           
+            $gitArgs = @('remote','set-url','origin',"https://$($env:GitUser):$($env:GitPassword)@github.com/repo.git")
+            & git @gitArgs
+           
 
             $mkdocs = Get-ChildItem -Path "C:\hostedtoolcache\windows\Python\3.10.4\x64\Scripts\" -Recurse |
             Where-Object Name -match 'mkdocs.exe' |

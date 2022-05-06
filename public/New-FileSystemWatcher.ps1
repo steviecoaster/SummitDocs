@@ -15,7 +15,7 @@ function New-FileSystemWatcher {
     .NOTES
     
     #>
-    [CmdletBinding()]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/SummitDocs/New-FileSystemWatcher/')]
     Param(
         [Parameter()]
         [String]
