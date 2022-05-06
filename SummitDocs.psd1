@@ -73,7 +73,9 @@ FunctionsToExport = @(
     'Get-DadJoke',
     'Get-PackageIcon',
     'New-FilesystemWatcher',
-    'Open-GitRepo'
+    'Open-GitRepo',
+    'Set-NexusCert',
+    'Set-CCMCert'
 )
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
