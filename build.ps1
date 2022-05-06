@@ -41,6 +41,12 @@ process {
                 Get-Content $_.FullName | Add-Content (Join-Path $module -ChildPath 'SummitDocs.psm1')
             }
         }
+        $Test {
+            $module = Join-Path $module -ChildPath 'SummitDocs.psd1'
+            Import-Module $Module
+
+            Invoke-Pester (Join-Path $root -ChildPath 'tests')
+        }
         $GenerateHelp {
             if (-not (Test-Path (Join-Path $module -ChildPath 'SummitDocs.psd1'))){
                 throw "Module not found, did you build it yet?"
