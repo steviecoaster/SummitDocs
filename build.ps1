@@ -6,6 +6,10 @@ Param(
 
     [Parameter()]
     [Switch]
+    $Test,
+
+    [Parameter()]
+    [Switch]
     $GenerateHelp,
 
     [Parameter()]
